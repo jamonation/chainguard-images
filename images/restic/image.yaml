@@ -1,0 +1,5 @@
+terraform: true
+
+versions:
+  - apko:
+      config: configs/latest.apko.yaml

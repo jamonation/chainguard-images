@@ -404,6 +404,11 @@ module "redis" {
   target_repository = "${var.target_repository}/redis"
 }
 
+module "restic" {
+  source            = "./images/restic"
+  target_repository = "${var.target_repository}/restic"
+}
+
 module "rqlite" {
   source            = "./images/rqlite"
   target_repository = "${var.target_repository}/rqlite"
