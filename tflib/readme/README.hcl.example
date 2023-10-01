@@ -1,0 +1,37 @@
+# This is an example README.hcl file. See README.md for instructions about generating readmes.
+#
+# The following variables are required for any README.hcl in this repo:
+#
+#     name, image, intro, body
+#
+# When copied/placed into an images/yourimage/README.hcl file, it will render
+# a markdown file based on the readme.tftpl template found in this directory.
+#
+# Any variable can use a heredoc for multiline literal values, for example:
+#
+# body = <<EOBODY
+# ## Heading here
+# `literal code here`
+#  1. list item 1 here
+#  etc. etc. etc.
+# EOBODY
+#
+# This means you can add plain markdown between heredoc delimiters and it will be rendered correctly.
+#
+# A small example follows:
+
+name = "postgresql"
+
+image = "cgr.dev/chainguard/postgresql"
+
+intro = "(Optional) A brief description of the PostgreSQL software/image"
+
+body =  <<EOBODY
+### How to use this image
+
+Explain how to use the image here.
+
+#### Here is 4th-level header
+
+	here is an indented code block
+EOBODY
