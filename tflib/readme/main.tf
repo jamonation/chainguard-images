@@ -21,5 +21,5 @@ resource "local_file" "README" {
     description : data.docs_readme.all.description,
     body : data.docs_readme.all.body,
   })
-  filename = "images/${var.image_name}/README.md"
+  filename = "${data.docs_readme.all.image_path}/${data.docs_readme.all.file_name}"
 }
