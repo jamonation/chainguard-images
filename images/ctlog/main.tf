@@ -9,20 +9,7 @@ variable "target_repository" {
 }
 
 locals {
-  components = toset([
-    "cloudsqlproxy",
-    "ctlog-createctconfig",
-    "ctlog-managectroots",
-    "ctlog-verifyfulcio",
-    "fulcio-createcerts",
-    "getoidctoken",
-    "rekor-createsecret",
-    "trillian-createdb",
-    "trillian-createtree",
-    "trillian-updatetree",
-    "tsa-createcertchain",
-    "tuf-createsecret",
-  ])
+  components = toset(["trillian-ctserver"])
 }
 
 module "config" {
@@ -42,8 +29,8 @@ module "latest" {
 }
 
 module "test-latest" {
-  source             = "./tests"
-  scaffolding-images = { for k, v in module.latest : k => v.image_ref }
+  source  = "./tests"
+  digests = { for k, v in module.latest : k => v.image_ref }
 }
 
 resource "oci_tag" "latest" {
