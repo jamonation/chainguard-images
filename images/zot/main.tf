@@ -23,6 +23,11 @@ module "test-latest" {
   digest = module.latest.image_ref
 }
 
+module "readme" {
+  source     = "../../tflib/readme"
+  image_name = basename(path.module)
+}
+
 resource "oci_tag" "latest" {
   depends_on = [module.test-latest]
   digest_ref = module.latest.image_ref

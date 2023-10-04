@@ -12,20 +12,22 @@
 ---
 <!--monopod:end-->
 
-%{ if intro != "" ~}
-## Introduction to ${image}
+<!--overview:start-->
+## Overview for ${image}
+${overview}
+<!--overview:end-->
 
-${intro}
-%{ endif }
+<!--getting:start-->
+## Get it!
 
-%{ if description != "" ~}
-## Description
+The image is available on `cgr.dev`:
 
-${description}
-%{ endif }
+```
+docker pull ${image}
+```
+<!--getting:end-->
 
-%{ if body != "" ~}
-## Body 
-
+<!--using:start-->
+## Using ${image}
 ${body}
-%{ endif }
+<!--using:end-->

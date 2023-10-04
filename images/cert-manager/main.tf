@@ -33,6 +33,12 @@ module "test-latest" {
   digests = { for k, v in module.latest : k => v.image_ref }
 }
 
+module "readme" {
+  for_each   = local.components
+  source     = "../../tflib/readme"
+  image_name = "${basename(path.module)}.${each.key}"
+}
+
 resource "oci_tag" "latest" {
   for_each   = local.components
   depends_on = [module.test-latest]
