@@ -1,0 +1,10 @@
+name: kafka-ui
+image: cgr.dev/chainguard/kafka-ui
+logo: https://storage.googleapis.com/chainguard-academy/logos/kafka-ui.svg
+endoflife: ""
+console_summary: ""
+short_description: 
+compatibility_notes: ""
+readme_file: README.md
+upstream_url: 
+keywords: []
