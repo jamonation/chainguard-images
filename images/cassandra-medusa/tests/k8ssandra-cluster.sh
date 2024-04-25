@@ -2,7 +2,7 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail -x
 
-kubectl create ns k8ssandra
+kubectl create ns k8ssandra-operator
 
 # Create K8ssandraCluster
 kubectl apply -n k8ssandra -f - <<EOF
@@ -10,7 +10,7 @@ apiVersion: k8ssandra.io/v1alpha1
 kind: K8ssandraCluster
 metadata:
   name: medusa
-  namespace: k8ssandra
+  namespace: k8ssandra-operator
 spec:
   cassandra:
     serverVersion: "4.0.1"

@@ -80,7 +80,7 @@ spec:
           command: ["bash", "-c"]
           args:
             - |
-              mc alias set k8s-minio http://minio-service.${NAMESPACE}.svc.cluster.local:9000 minioadmin minioadmin
+              mc alias set k8s-minio http://minio-service.minio.svc.cluster.local:9000 minioadmin minioadmin
               mc mb k8s-minio/k8ssandra-medusa
               mc admin user add k8s-minio k8ssandra k8ssandra
               mc admin policy attach k8s-minio readwrite --user k8ssandra
