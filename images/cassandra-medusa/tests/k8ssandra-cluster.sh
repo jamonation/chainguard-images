@@ -2,6 +2,8 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail -x
 
+kubectl create ns k8ssandra
+
 # Create K8ssandraCluster
 kubectl apply -n k8ssandra -f - <<EOF
 apiVersion: k8ssandra.io/v1alpha1

@@ -2,6 +2,8 @@
 
 set -o errexit -o nounset -o errtrace -o pipefail -x
 
+kubectl create ns minio
+
 # Dependency: minio deployment
 # **NOTE**: This approach is a lot more involved, but I aligned with how the
 # upstream maintainer said they setup for testing. See:
